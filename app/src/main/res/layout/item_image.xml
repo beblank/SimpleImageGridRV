@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data class="ImageBinding">
+        <variable
+            name="ImageData"
+            type="com.adit.simpleimagegrid.recyclerview.model.ImageModel" />
+        <variable
+            name="presenter"
+            type="com.adit.simpleimagegrid.recyclerview.listener.ClickListener" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/rv_image"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/cardBG"
+            android:padding="10dp"
+            android:onClick="@{(v)->presenter.onClickListener()}"
+            android:layout_margin="10dp">
+            <ImageView
+                android:id="@+id/rv_image"
+                android:layout_width="@dimen/icon"
+                android:layout_height="@dimen/icon"
+                android:src="@{ImageData.path}"
+                />
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>
